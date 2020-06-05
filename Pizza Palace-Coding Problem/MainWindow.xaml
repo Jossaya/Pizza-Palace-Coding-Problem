@@ -1,0 +1,134 @@
+﻿<Window x:Class="Pizza_Palace_Coding_Problem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Pizza_Palace_Coding_Problem.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="960" Width="1337" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="headerStyle">
+            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="TextBlock.FontWeight" Value="Bold" />
+            <Setter Property="TextBlock.FontSize" Value="27" />
+            <Setter Property="TextBlock.FontFamily" Value="Microsoft YaHei UI" />
+            <Setter Property="TextBlock.Foreground" Value="#666666" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <StackPanel Margin="10,0,979,10" Height="auto">
+            <TextBlock Text="Pizza" Style="{StaticResource headerStyle}" />
+            <ListView Margin="10" ItemsSource="{Binding PizzaSizes}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Margin="0 20" 
+                                            Content="{Binding Name}" 
+                                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                            Command="{Binding 
+                                                        RelativeSource={RelativeSource AncestorType={x:Type Window}},
+                                                        Path=DataContext.SelectPizzaCommand}" 
+                                            CommandParameter="{Binding Id}"
+                                            Width="200"
+                                            Height="60" IsCancel="True"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Margin="358,0,425,10" Height="auto">
+            <TextBlock Text="Toppings" Style="{StaticResource headerStyle}" />
+            <Grid  Height="auto">
+                <TextBlock Text="Basic Toppings" Style="{StaticResource headerStyle}" Margin="10,10,277,0" FontSize="22" />
+                <TextBlock Text="Deluxe Toppings" Style="{StaticResource headerStyle}" Margin="277,10,10,0" FontSize="22" />
+            </Grid>
+            <Grid  Height="auto">
+
+                <ListView Margin="10,0,277,10" ItemsSource="{Binding BasicToppings}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Margin="0 20" 
+                                            Content="{Binding Name}" 
+                                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                            Command="{Binding 
+                                                        RelativeSource={RelativeSource AncestorType={x:Type Window}},
+                                                        Path=DataContext.SelectPizzaToppingCommand}" 
+                                            CommandParameter="{Binding Id}"
+                                            Width="200"
+                                            Height="60" Background="#FF53C728" BorderBrush="#FF53C728"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <ListView Margin="277,0,10,10" ItemsSource="{Binding DeluxeToppings}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Margin="0 20" 
+                                            Content="{Binding Name}"
+                                            Command="{Binding 
+                                                        RelativeSource={RelativeSource AncestorType={x:Type Window}},
+                                                        Path=DataContext.SelectPizzaToppingCommand}" 
+                                            CommandParameter="{Binding Id}"
+                                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                            Width="200"
+                                            Height="60" Background="#FFECCD09" BorderBrush="#FFECCD09"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </StackPanel>
+        <StackPanel Margin="912,0,129,236"  Height="auto">
+            <TextBlock Text="Order Items" Style="{StaticResource headerStyle}" />
+            <ListView Margin="10" ItemsSource="{Binding CartItems}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding ItemName}" />
+                        <GridViewColumn Header="Price" Width="120" DisplayMemberBinding="{Binding Price}" />
+                        <!--<GridViewColumn Header="Mail" Width="150" DisplayMemberBinding="{Binding Mail}" />-->
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Margin="1037,0,0,86"  Height="121" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300">
+            <Grid Margin="10">
+                <TextBlock Text="Subtotal $" Margin="0,0,169,203" FontSize="20" FontWeight="Bold" />
+                <TextBlock Text="{Binding SubTotalPrice}" Margin="116,0,57,204" FontSize="20" FontWeight="Bold" />
+                <TextBlock Text="GST $" Margin="0,31,169,164" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" Width="55" />
+                <TextBlock Text="{Binding TotalGST}" Margin="116,39,25,169" FontSize="20" FontWeight="Bold" />
+                <TextBlock Text="Total $" Margin="0,71,169,128" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" />
+                <TextBlock Text="{Binding TotalPrice}" Margin="116,71,44,134" FontSize="20" FontWeight="Bold" />
+            </Grid>
+
+
+        </StackPanel>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="1171,867,0,0" VerticalAlignment="Top" Height="49" Width="147"  Command="{Binding 
+                                                        RelativeSource={RelativeSource AncestorType={x:Type Window}},
+                                                        Path=DataContext.SubmitCommand}" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizza Palace-Coding Problem", "Pizza Palace-Coding Problem\Pizza Palace-Coding Problem.csproj", "{C5D2F005-11F6-4FF8-934D-7858F0D2D931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizza Palace-Coding Problem.EF", "Pizza Palace-Coding Problem.EF\Pizza Palace-Coding Problem.EF.csproj", "{A54A28F0-1826-427A-9E2C-0FDF9EAE4C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizza Palace-Coding Problem.Core", "Pizza Palace-Coding Problem.Core\Pizza Palace-Coding Problem.Core.csproj", "{1202A839-B9EC-4A52-BBE3-555D180670A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5D2F005-11F6-4FF8-934D-7858F0D2D931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D2F005-11F6-4FF8-934D-7858F0D2D931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D2F005-11F6-4FF8-934D-7858F0D2D931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D2F005-11F6-4FF8-934D-7858F0D2D931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54A28F0-1826-427A-9E2C-0FDF9EAE4C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54A28F0-1826-427A-9E2C-0FDF9EAE4C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54A28F0-1826-427A-9E2C-0FDF9EAE4C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54A28F0-1826-427A-9E2C-0FDF9EAE4C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1202A839-B9EC-4A52-BBE3-555D180670A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1202A839-B9EC-4A52-BBE3-555D180670A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1202A839-B9EC-4A52-BBE3-555D180670A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1202A839-B9EC-4A52-BBE3-555D180670A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D9B61FF-62DA-43BF-9D25-19748FDDAFDC}
+	EndGlobalSection
+EndGlobal
